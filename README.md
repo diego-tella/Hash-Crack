@@ -1,2 +1,2 @@
 # Hash-Crack
-Simple script in Python that do Hash Brute-Force
+Simple script in Python that make Hash Brute-Force
