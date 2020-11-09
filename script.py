@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-import sys,os,time
-import hashlib
+import sys,os,time,hashlib
 os.system("clear")
 
 UseMd5 = False
@@ -31,24 +30,23 @@ def ErroArg():
 
 def Comeca():
     achou = False
-    str2hash = input("What is the hash? ") #inserindo a hash aqui
-    wordlist = sys.argv[2] #declarando a variável do arquivo de wordlist
-    file = open(wordlist, encoding = "utf8", errors='replace') #abrindo a wordlist e lendo
+    str2hash = input("What is the hash? ")
+    wordlist = sys.argv[2] 
+    file = open(wordlist, encoding = "utf8", errors='replace') 
     print("\n["+time.strftime("%H:%M:%S")+"] Starting brute-force\n")
-    for i in file.readlines(): #i vira todas as linhas
+    for i in file.readlines(): 
         i = i.rstrip("\n")
         if UseMd5:
-            result = hashlib.md5(i.encode()) #result vai receber i (wordlist) encodado
+            result = hashlib.md5(i.encode()) 
         elif UseSha1:
             result = hashlib.sha1(i.encode())
 
-        hash2 = result.hexdigest() #passa a hash pra variável hash2
-        #print(hash2)
-        if hash2 == str2hash: #faz a comparação se a hash passada pelo usuário é a hash do arquivo
+        hash2 = result.hexdigest() 
+        if hash2 == str2hash: 
             print("\n["+time.strftime("%H:%M:%S")+"] Hash Cracked!\n")
             print("\n["+time.strftime("%H:%M:%S")+"] End of brute-force \n")
             achou = True
-            print(str2hash+":"+i) #hashAchada:senhaLimpa
+            print(str2hash+":"+i) 
             quit()
     
     if achou == False:
@@ -57,7 +55,7 @@ def Comeca():
 
 banner()
 
-if len(sys.argv) != 3: #script.py é o argumento 0!
+if len(sys.argv) != 3: 
     ErroArg()
 else:
     if sys.argv[1] == "md5" or sys.argv[1] == "MD5":
