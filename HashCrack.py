@@ -64,4 +64,5 @@ else:
     elif sys.argv[1] == "sha1" or sys.argv[1] == "SHA1":
         UseSha1 = True
         Comeca()
-        
+    else:
+        print("Invalid argument. Use only MD5 or SHA1.")
