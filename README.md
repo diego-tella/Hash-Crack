@@ -11,7 +11,7 @@ cd Hash-Crack
 ## How to Use
 
 
-```python3 script.py HASH wordlist.txt```
-Put your desired hash, be it MD5 or SHA1. Also put your wordlist.
-```python3 script.py MD5 rockyou.txt```
+```python3 script.py HASH wordlist.txt```<br>
+Put your desired hash, be it MD5 or SHA1. Also put your wordlist.<br>
+```python3 script.py MD5 rockyou.txt```<br>
 The script will ask for the hash when started.
